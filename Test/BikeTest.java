@@ -43,6 +43,7 @@ class BikeTest {
         }
         for (int movement = 10; movement <= 1; movement--) {
             myBike.Decelerate();
+
         }
         assertEquals(10, myBike.getBikeDeceleration());
     }

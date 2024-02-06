@@ -1,15 +1,38 @@
 public class Television {
+    private boolean isActive;
+    private int volume;
 
-    private boolean isOn;
-
-    public void powerOn() {
-        isOn = true;
+    public void setActive() {
+        isActive = true;
     }
-    public void powerOff(){
-        isOn = false;
+    public void setInactive(){
+        isActive = false;
     }
 
-    public boolean isOn() {
-        return isOn;
+    public boolean isActive() {
+        return isActive;
+    }
+    public void setIncreaseInVolume(){
+        int increase = 100;
+        if(isActive){
+            if(volume <= increase){
+                volume++;
+            }
+        }
+    }
+
+    public int getVolumeIncrease() {
+        return volume;
+    }
+    public void setDecreaseInVolume(){
+        int decrease =100;
+        if(isActive) {
+            if (volume <= decrease) {
+                volume--;
+            }
+        }
+    }
+    public int getVolumeDecrease(){
+        return volume;
     }
 }
