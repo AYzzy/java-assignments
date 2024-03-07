@@ -29,19 +29,41 @@ class TelevisionTest {
     @Test
     void testThatVolumeIncreases(){
         television.setActive();
-        for(int movement =1;movement <=5 ;movement++ ) {
+        for(int volume =1;volume <=10 ;volume++ ) {
             television.setIncreaseInVolume();
         }
-        assertEquals(5,television.getVolumeIncrease());
+        assertEquals(10,television.getVolumeIncrease());
     }
     @Test
-    void testThatVolumeDecreases(){
+    void testThatVolumeDecreases() {
         television.setActive();
-        for(int movement =1;movement <=5 ;movement++ ) {
+        for (int volume = 1; volume <= 10; volume++) {
             television.setIncreaseInVolume();
         }
-        for(int movement =1;movement <=5 ;movement++ ) {
-            television.setIncreaseInVolume();
+        for (int volume = 10; volume >= 1 ; volume--) {
+            television.setDecreaseInVolume();
         }
-    assertEquals();
+        assertEquals(0,television.getVolumeDecrease());
+    }
+    @Test
+    void testToIncrementChannel(){
+        television.setActive();
+            for(int channel =1; channel<=10;channel++){
+            television.setChannelToIncrement();
+            }
+        assertEquals(10,television.getChannelToIncrement());
+    }
+    @Test
+    void testToDecrementChannel(){
+        television.setActive();
+        for(int channel =1; channel<=10;channel++) {
+            television.setChannelToIncrement();
+        }
+        for(int channel =1; channel<=10;channel++) {
+            television.setChannelToIncrement();
+        }
+        assertEquals(2,television.getChannelToDecrement());
+
+    }
+
 }

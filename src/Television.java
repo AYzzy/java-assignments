@@ -2,6 +2,8 @@ public class Television {
     private boolean isActive;
     private int volume;
 
+    private int channel;
+
     public void setActive() {
         isActive = true;
     }
@@ -34,5 +36,32 @@ public class Television {
     }
     public int getVolumeDecrease(){
         return volume;
+    }
+
+    public void setChannelToIncrement(){
+        int incrementChannel = 20;
+        if(isActive){
+            if(channel <= incrementChannel){
+                channel++;
+
+            }
+        }
+    }
+
+    public int getChannelToIncrement() {
+        return channel;
+    }
+    public void setChannelToDecrement(){
+        int decrementChannel = 20;
+        if(isActive){
+            if(channel <= decrementChannel){
+                channel--;
+            }
+
+        }
+    }
+
+    public int getChannelToDecrement() {
+        return channel;
     }
 }

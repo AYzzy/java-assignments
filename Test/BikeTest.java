@@ -41,15 +41,28 @@ class BikeTest {
         for(int movement =1;movement <=10 ;movement++ ) {
             myBike.accelerate();
         }
-        for (int movement = 10; movement <= 1; movement--) {
+        for (int movement = 10; movement >= 1; movement--) {
             myBike.Decelerate();
 
         }
-        assertEquals(10, myBike.getBikeDeceleration());
+        assertEquals(0, myBike.getBikeDeceleration());
     }
-//    @Test
 
+    @Test
+    void testThatBikeGearIncreases(){
+        myBike.powerOn();
+        for (int j =1;j < 20; j++)
+            myBike.accelerate();
+        assertEquals(1, myBike.getGear());
 
+    }
+    @Test
+    void testThatBikeGearTwoIncreases() {
+        myBike.powerOn();
+        for (int j = 0; j < 30; j+=2)
 
-
+            myBike.increaseGear();
+        myBike.increaseGear();
+        assertEquals(2, myBike.getGear());
+    }
 }
